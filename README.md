@@ -3,4 +3,4 @@
 roles
 
 fastboot
-ansible-playbook ./create_fastboot.yml -e Server=servername -e RemoteUser=username -i inventory
+ansible-playbook ./roles/create_fastboot.yml -e Server=servername -e RemoteUser=username -i inventory

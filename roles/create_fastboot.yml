@@ -1,0 +1,13 @@
+- hosts: "{{Server}}"
+
+  gather_facts: false
+  remote_user: "{{RemoteUser}}"
+  become: yes
+  become_method: sudo
+  become_user: root
+
+  tasks:
+  - name: Create fastboot to skip fsck on linux. After Reboot the file get's kicked (deletetd) by the system.
+    file:
+      path: "/fastboot"
+      state: touch

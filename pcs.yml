@@ -1,0 +1,27 @@
+---
+  - hosts: all
+
+    gather_facts: true
+    remote_user: username
+    become: true
+    become_method: sudo
+    become_user: root
+
+    tasks:
+      - name: Debug Playbook Vars
+        debug:
+          msg: "VAR: {{ sc_pacemaker_item }}"
+        with_items: "{{ sc_pacemaker }}"
+        loop_control:
+          loop_var: sc_pacemaker_item
+
+      - name: Include Role "{{ sc_pacemaker }}"
+        include_role:
+          name: "{{ sc_pacemaker_item.split('_')[0] }}"
+        vars:
+          pcs_name: "{{ sc_pacemaker_item.split('_')[0] }}"
+          pcs_status: "{{ sc_pacemaker_item.split('_')[1] }}"
+          debug_level: "0"
+        with_items: "{{ sc_pacemaker }}"
+        loop_control:
+loop_var: sc_pacemaker_item

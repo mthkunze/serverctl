@@ -10,19 +10,19 @@
     tasks:
       - name: Debug Playbook Vars
         debug:
-          msg: "VAR: {{ sc_pacemaker_item }}"
-        with_items: "{{ sc_pacemaker }}"
+          msg: "VAR: {{ pacemaker_item }}"
+        with_items: "{{ pacemaker }}"
         loop_control:
-          loop_var: sc_pacemaker_item
+          loop_var: pacemaker_item
 
-      - name: Include Role "{{ sc_pacemaker }}"
+      - name: Include Role "{{ pacemaker }}"
         include_role:
-          name: "{{ sc_pacemaker_item.split('_')[0] }}"
+          name: "{{ pacemaker_item.split('_')[0] }}"
         vars:
-          pcs_name: "{{ sc_pacemaker_item.split('_')[0] }}"
-          pcs_status: "{{ sc_pacemaker_item.split('_')[1] }}"
-          pcs_service: "{{ sc_pacemaker_item.split('_')[2] }}"
+          pcs_name: "{{ pacemaker_item.split('_')[0] }}"
+          pcs_status: "{{ pacemaker_item.split('_')[1] }}"
+          pcs_service: "{{ pacemaker_item.split('_')[2] }}"
           debug_level: "0"
-        with_items: "{{ sc_pacemaker }}"
+        with_items: "{{ pacemaker }}"
         loop_control:
 loop_var: sc_pacemaker_item

@@ -7,4 +7,8 @@ ansible-playbook ./roles/fastboot/create_fastboot.yml -e Server=servername -e Re
 
 ## pacemaker cluster
 
-ansible-playbook ./pcs.yml -e Server=servername -e RemoteUser=username -e pacemaker=online_yes -i inventory
+pacemaker status = online/offline
+
+pacemaker enabled = yes/no
+
+ansible-playbook ./pcs.yml -e RemoteUser=username -e pacemaker=online_yes -i inventory

@@ -2,6 +2,3 @@
 
 # Pacemaker Status
 pcs_status: online
-
-# Pacemaker Service
-pcs_service: yes

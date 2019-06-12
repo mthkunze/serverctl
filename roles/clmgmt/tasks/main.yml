@@ -1,6 +1,6 @@
 --
-- name: Task Debug {{ sc_pacemaker }}
-  debug: var= "{{ sc_pacemaker }}"
+- name: Task Debug {{ pacemaker }}
+  debug: var= "{{ pacemaker }}"
   with_items: sc_pacemaker
   when: debug_level != "0"
 

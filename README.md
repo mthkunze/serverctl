@@ -11,4 +11,4 @@ pacemaker status = online/offline
 
 pacemaker enabled = yes/no
 
-ansible-playbook ./pcs.yml -e RemoteUser=username -e pacemaker=online_yes -i inventory
+ansible-playbook ./pcs.yml -e remoteuser=username -e pacemaker=online_yes -i inventory

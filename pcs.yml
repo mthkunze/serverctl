@@ -2,7 +2,7 @@
   - hosts: all
 
     gather_facts: true
-    remote_user: username
+    remote_user: "{{ remoteuser }}"
     become: true
     become_method: sudo
     become_user: root

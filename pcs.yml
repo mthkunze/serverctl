@@ -21,6 +21,7 @@
         vars:
           pcs_name: "{{ sc_pacemaker_item.split('_')[0] }}"
           pcs_status: "{{ sc_pacemaker_item.split('_')[1] }}"
+          pcs_service: "{{ sc_pacemaker_item.split('_')[2] }}"
           debug_level: "0"
         with_items: "{{ sc_pacemaker }}"
         loop_control:

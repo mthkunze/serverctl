@@ -1,7 +1,7 @@
 --
 - name: Task Debug {{ pacemaker }}
   debug: var= "{{ pacemaker }}"
-  with_items: sc_pacemaker
+  with_items: pacemaker
   when: debug_level != "0"
 
 - name: Start Clusterservice
@@ -29,5 +29,5 @@
 - name: Disable Cluster Autostart
   systemd:
     name: pacemaker
-    enabled: yes
+    enabled: no
   when: pcs_service == "no"

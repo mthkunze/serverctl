@@ -1,4 +1,4 @@
-# serverctl is a control suite for daily server management tasks
+# serverctl is a control suite for daily service management tasks
 
 # Roles
 
